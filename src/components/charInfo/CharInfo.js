@@ -1,4 +1,5 @@
 import { Component } from 'react/cjs/react.production.min';
+import PropTypes  from 'prop-types';
 
 import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
@@ -25,6 +26,8 @@ class CharInfo extends Component {
             this.updateChar();
         }
     }
+
+    
 
     updateChar = () => {
         const {charId} = this.props;
@@ -131,4 +134,8 @@ const View = ({char}) => {
 </>
     )
 }
+CharInfo.propTypes = {
+    charId: PropTypes.number
+}
+
 export default CharInfo;
